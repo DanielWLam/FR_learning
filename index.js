@@ -1,12 +1,9 @@
-import { curry } from 'lodash';
-
-var match = curry((reg, str) => str.match(reg));
-var filter = curry((f, arr) => arr.filter(f));
-
-var haveSpace = match(/\s+/g);
-
-haveSpace('ffffff');
-
-haveSpace(' a b ');
-
-console.log(filter(haveSpace, ['abcd', 'Hello world']));
+import _ from 'lodash';
+var sin = _.memorize(x => Math.sin(x));
+var start = + new Date();
+var a = sin(1);
+console.log(a);
+conosle.log(+new Date() - start);
+var b = sin(1);
+console.log(+new Date() - start);
+console.log(b);
